@@ -1,0 +1,380 @@
+/* =========================================
+   TEMA FUTURISTIK: AI & DATA SCIENTIST
+========================================= */
+:root {
+    --bg-dark: #070f2b;        /* Biru malam sangat gelap */
+    --bg-card: #1b1a55;        /* Biru navy untuk kartu */
+    --primary: #00ffcc;        /* Neon Cyan/Mint khas Tech/AI */
+    --secondary: #535c91;      /* Ungu/Biru pudar */
+    --text-main: #e2e8f0;      /* Putih terang */
+    --text-muted: #94a3b8;     /* Abu-abu terang */
+    --glow-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 255, 204, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(83, 92, 145, 0.1), transparent 25%);
+}
+
+/* ================= NAVIGASI (GLASSMORPHISM) ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(7, 15, 43, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px var(--primary);
+}
+
+/* ================= TOMBOL NEON ================= */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    box-shadow: var(--glow-shadow);
+    border: 1px solid var(--primary);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: var(--glow-shadow);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+/* Animasi Gradient Text untuk Nama */
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text; /* Properti standar agar kompatibel dengan semua browser */
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Mengetik / Code Font Style untuk Profesi */
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Efek Foto Mengambang & Glowing Border */
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-card);
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ================= STRUKTUR SEKSI & KARTU ================= */
+section {
+    padding: 6rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 auto 4rem auto; /* Membuat elemen otomatis tepat di tengah */
+    position: relative;
+    width: fit-content; /* Lebar elemen hanya seukuran teksnya saja */
+}
+
+/* Garis Neon di bawah Judul Section */
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--primary);
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+    box-shadow: var(--glow-shadow);
+}
+
+/* Keahlian */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--glow-shadow);
+}
+
+/* Project & Sertifikasi (Kartu Kompleks) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card, .ec-card {
+    background: rgba(27, 26, 85, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen Garis Kiri pada Kartu */
+.project-card::before, .ec-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary);
+    transition: 0.4s;
+}
+
+.project-card:hover, .ec-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 255, 204, 0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.project-card:hover::before, .ec-card:hover::before {
+    background: var(--primary);
+    box-shadow: var(--glow-shadow);
+}
+
+.project-card h3, .ec-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.project-card p, .ec-card .desc {
+    color: var(--text-muted);
+}
+
+/* Label Tags (Code Style) */
+.tags {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tags span {
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+/* ================= SERTIFIKASI & PENGALAMAN ================= */
+.ec-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ec-column {
+    flex: 1;
+}
+
+.ec-column h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.ec-card .role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.ec-card .date {
+    font-size: 0.85rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.cert-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    opacity: 0.8;
+    filter: grayscale(20%);
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cert-img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+/* ================= KONTAK & FOOTER ================= */
+.contact {
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(27, 26, 85, 0.8));
+}
+
+.contact p {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #04091a;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= RESPONSIVE MOBILE ================= */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero { flex-direction: column-reverse; text-align: center; margin-top: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content h2 { border-left: none; padding-left: 0; font-size: 1.2rem; }
+    .hero-content p { margin: 0 auto 2rem auto; }
+    .hero-image img { width: 250px; height: 250px; }
+    .ec-container { flex-direction: column; gap: 2rem; }
+    .contact-links { flex-direction: column; padding: 0 2rem; }
+}
